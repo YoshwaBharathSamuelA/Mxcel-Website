@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact — MXCEL-2K26</title>
+
+  <!-- Google Fonts (match other pages) -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Unbounded:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="Pictures/logo.png">
+  <!-- EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+  (function () {
+    emailjs.init("PSFWFFT4yddMk0wzk");
+  })();
+</script>
+
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo-link" href="index.html">
+      <img src="Pictures/logo.png" alt="MXCEL Logo" class="logo-img">
+    </a>
+
+   <div class="header-text">
+  <img src="Pictures/Logo_Bgw.png" 
+       alt="MXCEL 2K26" 
+       class="header-title-img">
+</div>
+
+    <div class="header-actions">
+      <a class="cta" href="com_reg.html" rel="noopener">Register Now</a>
+    </div>
+  </header>
+
+  <main role="main">
+    <section class="container contact-hero" aria-labelledby="contactTitle">
+      <h2 id="contactTitle" class="section-title">Contact Us</h2>
+  <p class="lead">Have questions about MXCEL-2K26? Drop us a message or reach out using the details below.</p>
+    </section>
+
+    <section class="container contact-grid" aria-labelledby="contactFormTitle">
+      <div class="contact-column">
+        <h3 id="contactFormTitle">Send a message</h3>
+        <form id="contactForm" action="#" method="post" role="form" aria-describedby="contactHelp">
+          <label for="name">Full name</label>
+          <input id="name" name="name" type="text" placeholder="Your full name" required aria-required="true" />
+
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com" required aria-required="true" />
+
+          <label for="phone">Phone</label>
+          <input id="phone" name="phone" type="tel" pattern="[0-9\s\-+]{6,20}">
+
+
+          <label for="subject">Subject</label>
+          <select id="subject" name="subject" aria-required="false">
+            <option value="general">General question</option>
+            <option value="registration">Registration help</option>
+            <option value="events">Events & schedule</option>
+            <option value="other">Other</option>
+          </select>
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="6" placeholder="Tell us more..." required aria-required="true"></textarea>
+
+          <p id="contactHelp" class="sr-only">All required fields are marked. We will respond within 2 business days.</p>
+
+          <div style="display:flex; gap:10px; align-items:center; margin-top:0.6rem;">
+            <button class="submit-btn" type="submit">Send Message</button>
+            <button class="submit-btn" type="reset">Reset</button>
+          </div>
+        </form>
+        <p id="formStatus" style="margin-top:1rem; font-weight:600;"></p>
+<section class="container coordinators-section">
+  <h3 class="coordinators-title">Student Coordinators</h3>
+
+  <div class="coordinators-grid">
+    
+
+    <a href="tel:+918667352688" class="coordinator-card">
+      <div class="card-inner">
+        <i class="fas fa-user-graduate"></i>
+        <h4>Sudharsan M</h4>
+        <p>+91 86673 52688</p>
+      </div>
+    </a>
+
+    <a href="tel:+916380991091" class="coordinator-card">
+      <div class="card-inner">
+        <i class="fas fa-user-graduate"></i>
+        <h4>Dinesh</h4>
+        <p>+91 63809 91091</p>
+      </div>
+    </a>
+    <a href="tel:+918667352688" class="coordinator-card">
+      <div class="card-inner">
+        <i class="fas fa-user-graduate"></i>
+        <h4>Yoshwa Bharath A</h4>
+        <p>+91 82487 16889</p>
+      </div>
+    </a>
+
+  </div>
+</section>
+<section class="container location-section">
+  <h3 class="location-title">Event Information</h3>
+
+   <div class="event-strip">
+  <span>Date : January 22, 2026</span>
+  <span class="divider">|</span>
+  <span>Venue : Kongu Engineering College, Department of Mechanical Engineering</span>
+</div>
+</section>
+  <h3 class="location-title">Event Location</h3>
+
+  <div class="location-card">
+
+    <div class="location-info">
+      <h4>Kongu Engineering College</h4>
+      <p>
+        Perundurai, Erode District<br>
+        Tamil Nadu – 638060
+      </p>
+
+      <a
+        href="https://maps.app.goo.gl/7L445EGgPaK95N8r6"
+        target="_blank"
+        class="map-btn"
+      >
+        <i class="fas fa-location-arrow"></i>
+        Open in Google Maps
+      </a>
+    </div>
+
+    <div class="location-map">
+      <iframe
+        src="https://www.google.com/maps?q=Kongu%20Engineering%20College&output=embed"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
+    
+
+  </div>
+  
+
+      </div>
+
+
+    </section>
+  </main>
+  <button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
+
+  <!-- Chatbot widget -->
+  <div class="chatbot-widget" id="chatbotWidget" aria-hidden="false">
+    <button class="chat-toggle" aria-label="Open chat" title="Chat with us">💬</button>
+    <span class="ask-label" role="button" aria-label="Ask Me">Ask Me</span>
+
+    <aside class="chat-panel" role="dialog" aria-modal="false" aria-label="Site assistant">
+      <header class="chat-header">
+        <img src="Pictures/logo.png" alt="Mechanical Engineering logo" class="chat-logo" />
+        <div class="chat-meta">
+          <strong>Mechanical Engineering Association</strong>
+          <div class="chat-status"><span class="dot online"></span> Ask the assistant · Online</div>
+        </div>
+        <button class="chat-close" aria-label="Close chat">✕</button>
+      </header>
+
+      <div class="chat-body" role="log" aria-live="polite"></div>
+
+      <div class="chat-quick">
+        <button class="quick-btn">Club Events</button>
+        <button class="quick-btn">Contact Details</button>
+        <button class="quick-btn">About Club</button>
+        <button class="quick-btn">Website Info</button>
+      </div>
+
+      <form class="chat-form" action="#">
+        <input class="chat-input" type="text" placeholder="Type your message..." aria-label="Type your message">
+        <button class="chat-send" aria-label="Send message">➤</button>
+      </form>
+    </aside>
+  </div>
+  <footer class="site-footer">
+  <div class="footer-container">
+
+    <div class="footer-brand">
+      <img src="Pictures/logo.png" alt="MXCEL Logo" class="footer-logo">
+      <p>MXCEL-2K26<br>Mechanical Engineering Association | KEC</p>
+    </div>
+
+    <div class="footer-social">
+      <h4>Follow Us</h4>
+      <div class="social-icons">
+        <a href="https://www.instagram.com/kec_mea/?igshid=YmMyMTA2M2Y%3D" target="_blank" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="http://linkedin.com/in/mechanical-engineering-association-177a92253" target="_blank" aria-label="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="mailto:kec.mea@gmail.com" aria-label="Email">
+  <i class="fas fa-envelope"></i>
+</a>
+
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 MXCEL | Designed & Maintained by Bharath
+  </div>
+</footer>
+  <script src="script.js" defer></script>
+</body>
+</html>

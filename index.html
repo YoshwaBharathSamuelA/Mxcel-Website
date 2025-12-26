@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MXCEL-2K26|MEA</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <!-- 3D display font for the header -->
+  <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap" rel="stylesheet">
+  <!-- Stylish display fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Unbounded:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="Pictures/logo.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="event-strip">
+  <span>📅 January 22 , 2026</span>
+  <span class="divider">|</span>
+  <span>📍 Kongu Engineering College</span>
+  <span class="divider">|</span>
+  <span>🛠 Department of Mechanical Engineering</span>
+</div>
+
+
+  <!-- background logo element: becomes visible / parallax on scroll -->
+  <div id="bgLogo" aria-hidden="true"></div>
+
+  <!-- animated translucent photo background (uses Pictures_Bg) -->
+  <div id="bgPhotos" aria-hidden="true">
+    <img src="Pictures_Bg/1 (1).JPG" class="bg-photo" alt="bg1">
+    <img src="Pictures_Bg/1 (2).jpg" class="bg-photo" alt="bg2">
+    <img src="Pictures_Bg/1 (3).jpg" class="bg-photo" alt="bg3">
+    <img src="Pictures_Bg/1 (4).jpg" class="bg-photo" alt="bg4">
+    <img src="Pictures_Bg/1 (5).png" class="bg-photo" alt="bg5">
+    <img src="Pictures_Bg/1 (6).JPG" class="bg-photo" alt="bg6">
+    <img src="Pictures_Bg/1 (7).JPG" class="bg-photo" alt="bg7">
+    <img src="Pictures_Bg/1 (8).JPG" class="bg-photo" alt="bg8">
+    <img src="Pictures_Bg/1 (9).JPG" class="bg-photo" alt="bg9">
+    <img src="Pictures_Bg/1 (10).jpg" class="bg-photo" alt="bg10">
+  </div>
+
+  <header class="site-header">
+    <a class="logo-link" href="index.html">
+      <img src="Pictures/logo.png" alt="MXCEL Logo" class="logo-img">
+    </a>
+
+    <div class="header-text">
+  <img src="Pictures/Logo_Bgw.png" 
+       alt="MXCEL 2K26" 
+       class="header-title-img">
+</div>
+
+
+    <div class="header-actions">
+      <a class="cta" href="contact.html" aria-label="Contact us">Contact</a>
+      <a class="cta" href="com_reg.html" target="_blank" rel="noopener noreferrer">Register Now</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Photo slider -->
+    <section class="slider-section">
+      <div class="slider" id="photo-slider">
+        <div class="slides">
+            <div class="slide" style="background-image: url('Pictures/Header.png')" data-caption-title="Welcome to MXCEL-2K26" data-caption-sub="National symposium — Mechanical Engineering">
+              <img src="Pictures/Header.jpeg" alt="Event photo 1" loading="lazy">
+              <div class="slide-caption" aria-hidden="false">
+                <h3>Welcome to MXCEL-2K26</h3>
+                <p>National symposium — Mechanical Engineering</p>
+              </div>
+            </div>
+            <div class="slide" style="background-image: url('Pictures/Header_Mech.png')" data-caption-title="Technical Workshops" data-caption-sub="Hands-on sessions & competitions">
+              <img src="Pictures/Header_Mech.png" alt="Event photo 2" loading="lazy">
+              <div class="slide-caption" aria-hidden="true">
+                <h3>Technical Workshops</h3>
+                <p>Hands-on sessions & competitions</p>
+              </div>
+            </div>
+            <div class="slide" style="background-image: url('Pictures/Header_Boys.JPG')" data-caption-title="Cultural Fest" data-caption-sub="Music, quizzes and fun">
+              <img src="Pictures/Header_Boys.JPG" alt="Event photo 3" loading="lazy">
+              <div class="slide-caption" aria-hidden="true">
+                <h3>Cultural Fest</h3>
+                <p>Music, quizzes and fun</p>
+              </div>
+            </div>
+          <div class="slide" style="background-image: url('Pictures/Dance.JPG')">
+            <img src="Pictures/Dance.JPG" alt="Event photo 3">
+          </div>
+          <div class="slide" style="background-image: url('Pictures/sab.png')">
+            <img src="Pictures/sab.png" alt="Event photo 3">
+          </div>
+        </div>
+
+        <button class="prev" aria-label="Previous slide">‹</button>
+        <button class="next" aria-label="Next slide">›</button>
+
+        <div class="dots" aria-hidden="false"></div>
+      </div>
+    </section>
+      <section class="about">
+  <div class="about-wrapper">
+     <section class="registration-banner" aria-labelledby="reg-heading">
+      <div class="container">
+        <h3 id="reg-heading">Ready to participate?</h3>
+        <p class="reg-sub">Secure your spot at MXCEL-2K26 — limited seats for workshops and competitions.</p>
+        <div class="countdown" id="countdown">
+  <div class="time-box">
+    <span id="days">00</span>
+    <small>Days</small>
+  </div>
+  <div class="time-box">
+    <span id="hours">00</span>
+    <small>Hours</small>
+  </div>
+  <div class="time-box">
+    <span id="minutes">00</span>
+    <small>Minutes</small>
+  </div>
+  <div class="time-box">
+    <span id="seconds">00</span>
+    <small>Seconds</small>
+  </div>
+</div>
+
+        <a class="ButtonR big" href="com_reg.html" target="_blank" rel="noopener noreferrer">Register Now</a>
+      </div>
+    </section>
+
+    <!-- ABOUT MXCEL -->
+    <div class="about-block">
+      <img src="Pictures/Logo_Bgw.png" alt="MXCEL Logo" class="about-logo">
+
+      <h2>ABOUT MXCEL</h2>
+      <p>
+        MXCEL is a national-level technical symposium conducted annually by the
+        Mechanical Engineering Association (MEA). Our flagship event continues
+        to inspire countless ideas, expedite innovative startups, and host a
+        jam-packed cluster of events designed for everyone. MXCEL 2024,
+        scheduled for October 9th, aims to propel these ideas to new heights,
+        because we know that great ideas are hard to come by!
+      </p>
+    </div>
+
+    <!-- ABOUT KEC -->
+    <div class="about-block">
+      <img src="Pictures/Clg_logo_bgw.png" alt="KEC Logo" class="about-logo">
+
+      <h2>ABOUT KEC</h2>
+      <p>
+        Kongu Engineering College, affiliated with Anna University, is situated
+        in Perundurai, Erode. It holds an A++ grade accreditation from NAAC.
+        Since its establishment in 1984, the institution has grown into a
+        center of excellence with robust infrastructure, outstanding academic
+        performance, and a serene learning environment that shapes future
+        leaders.
+      </p>
+    </div>
+
+  </div>
+</section>
+<div class="event-strip">
+  <span>📅 January 22, 2026</span>
+  <span class="divider">|</span>
+  <span>📍 Kongu Engineering College</span>
+</div>
+    <section class="events">
+      <div class="tech card">
+        <div class="card-inner">
+          <div>
+            <h3 class="card-title">TECHNICAL</h3>
+            <p class="card-desc">Paper presentations and competitive technical events.</p>
+            <ul class="card-list">
+              <li>PAPER PRESENTATION</li>
+              <li>CAD/CODE MASTER</li>
+              <li>QUIZ MANIA</li>
+            </ul>
+          </div>
+
+          <div class="card-actions">
+            <a class="register-btn" href="com_reg.html" target="_blank" rel="noopener noreferrer" aria-label="Register for technical events">Register</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="nontech card">
+        <div class="card-inner">
+          <div>
+            <h3 class="card-title">NON-TECHNICAL</h3>
+            <p class="card-desc">Cultural events and creative competitions.</p>
+            <ul class="card-list">
+              <li>ADZAP</li>
+              <li>MEME CREATION</li>
+              <li>LET'S VIBE</li>
+            </ul>
+          </div>
+
+          <div class="card-actions">
+            <a class="register-btn" href="com_reg.html" target="_blank" rel="noopener noreferrer" aria-label="Register for non-technical events">Register</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="workshop card">
+        <div class="card-inner">
+          <div>
+            <h3 class="card-title">WORKSHOP</h3>
+            <p class="card-desc">Hands-on session focused on emerging manufacturing trends.</p>
+            <ul class="card-list">
+              <li>EMERGING TRENDS IN 3D PRINTING TECHNOLOGY</li>
+            </ul>
+          </div>
+
+          <div class="card-actions">
+            <a class="register-btn" href="com_reg.html" target="_blank" rel="noopener noreferrer" aria-label="Register for workshop">Register</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pillars / Team section -->
+    <section class="pillars-section">
+      <div class="container">
+        <h2 class="pillars-title">Pillars of the Association</h2>
+        <p class="pillars-sub">They are the pillars of the Association, showing exceptional dedication.</p>
+
+        <div class="pillars-grid">
+          <div class="pillar-card">
+            <img src="Faculty photos/HOD.png" alt="Mr. A" loading="lazy">
+            <div class="pillar-caption">DR. P. SELVAKUMAR<br>Head Of The Department</div>
+          </div>
+
+          <div class="pillar-card">
+            <img src="Faculty photos/KAMAL SIR.png" alt="Ms. B" loading="lazy">
+            <div class="pillar-caption">DR. K. KAMALAKANNAN<BR>Faculty Co-ordinator</div>
+          </div>
+
+          <div class="pillar-card">
+            <img src="Faculty photos/KVSK_SIR.png" alt="Dr. C" loading="lazy">
+            <div class="pillar-caption">DR. K.V. SATHEESHKUMAR<br>Faculty Co-ordinator</div>
+          </div>
+        </div>
+      </div>
+    </section>
+ <!-- Registration banner placed above pillars -->
+   
+
+    
+  </main>
+
+
+  <!-- back-to-top -->
+  <button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
+
+  <!-- Chatbot widget -->
+  <div class="chatbot-widget" id="chatbotWidget" aria-hidden="false">
+    <button class="chat-toggle" aria-label="Open chat" title="Chat with us">💬</button>
+    <span class="ask-label" role="button" aria-label="Ask Me">Ask Me</span>
+
+    <aside class="chat-panel" role="dialog" aria-modal="false" aria-label="Site assistant">
+      <header class="chat-header">
+        <img src="Pictures/logo.png" alt="Mechanical Engineering logo" class="chat-logo" />
+        <div class="chat-meta">
+          <strong>Mechanical Engineering Association</strong>
+          <div class="chat-status"><span class="dot online"></span> Ask the assistant · Online</div>
+        </div>
+        <button class="chat-close" aria-label="Close chat">✕</button>
+      </header>
+
+      <div class="chat-body" role="log" aria-live="polite"></div>
+
+      <div class="chat-quick">
+        <button class="quick-btn">Club Events</button>
+        <button class="quick-btn">Contact Details</button>
+        <button class="quick-btn">About Club</button>
+        <button class="quick-btn">Website Info</button>
+      </div>
+
+      <form class="chat-form" action="#">
+        <input class="chat-input" type="text" placeholder="Type your message..." aria-label="Type your message">
+        <button class="chat-send" aria-label="Send message">➤</button>
+      </form>
+    </aside>
+  </div>
+  <footer class="site-footer">
+    <div class="event-strip">
+  <span>📅 January 22, 2026</span>
+  <span class="divider">|</span>
+  <span>📍 Kongu Engineering College</span>
+  <span class="divider">|</span>
+  <span>🛠 Department of Mechanical Engineering</span>
+</div>
+  <div class="footer-container">
+
+    <div class="footer-brand">
+      <img src="Pictures/logo.png" alt="MXCEL Logo" class="footer-logo">
+      <p>MXCEL-2K26<br>Mechanical Engineering Association | KEC</p>
+    </div>
+
+    <div class="footer-social">
+      <h4>Follow Us</h4>
+      <div class="social-icons">
+        <a href="https://www.instagram.com/kec_mea/?igshid=YmMyMTA2M2Y%3D" target="_blank" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="http://linkedin.com/in/mechanical-engineering-association-177a92253" target="_blank" aria-label="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="mailto:kec.mea@gmail.com" aria-label="Email">
+  <i class="fas fa-envelope"></i>
+</a>
+
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 MXCEL | Designed & Maintained by Bharath
+  </div>
+</footer>
+
+
+  <!-- JS for interactive text -->
+  <script src="script.js"></script>
+  <script>
+  // SET EVENT DATE (YYYY, MM-1, DD, HH, MM, SS)
+  const eventDate = new Date(2026, 0, 22, 9, 0, 0).getTime();
+
+  // Example: Oct 9, 2026 – 9:00 AM
+
+  const timer = setInterval(() => {
+    const now = new Date().getTime();
+    const distance = eventDate - now;
+
+    if (distance < 0) {
+      clearInterval(timer);
+      document.getElementById("countdown").innerHTML =
+        "<strong style='color:#ffd54d;font-size:1.2rem;'>Registrations Closed</strong>";
+      return;
+    }
+
+    document.getElementById("days").innerText =
+      Math.floor(distance / (1000 * 60 * 60 * 24));
+    document.getElementById("hours").innerText =
+      Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    document.getElementById("minutes").innerText =
+      Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    document.getElementById("seconds").innerText =
+      Math.floor((distance % (1000 * 60)) / 1000);
+  }, 1000);
+</script>
+
+</body>
+</html>
