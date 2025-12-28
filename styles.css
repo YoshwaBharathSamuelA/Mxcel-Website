@@ -1993,3 +1993,36 @@ a:focus, button:focus, .dot:focus{
 
 
 
+/* ===== FIX: REGISTER BUTTON NOT CLICKABLE ON MOBILE ===== */
+
+.site-header {
+  position: fixed;
+  z-index: 3000; /* higher than floatingTools (1200) */
+}
+
+.site-header a,
+.site-header button {
+  position: relative;
+  z-index: 3001;
+  pointer-events: auto;
+}
+@media (max-width: 768px) {
+
+  /* Kill heavy background layers */
+  #bgPhotos,
+  #bgLogo,
+  #floatingTools {
+    display: none !important;
+  }
+
+  /* Disable expensive blur effects */
+  * {
+    backdrop-filter: none !important;
+    filter: none !important;
+  }
+
+  /* Stop background animations */
+  body {
+    animation: none !important;
+  }
+}
