@@ -126,67 +126,12 @@ body{
   text-align:center;
 }
 
-/* 3D interactive header */
-.header-text{
-  perspective: 900px; /* allow 3D transform space */
-}
-.header-text h1{
-  font-family: 'Abril Fatface', 'Bungee Shade', var(--font-heading);
-  font-size: 3.6rem;
-  line-height: 1;
-  letter-spacing: 3px;
-  color: var(--red);
-  position: relative;
-  /* layered shadows to emulate 3D depth */
-  text-shadow:
-    0 1px 0 rgba(0,0,0,0.6),
-    0 2px 0 rgba(0,0,0,0.55),
-    0 4px 0 rgba(0,0,0,0.5),
-    0 8px 12px rgba(0,0,0,0.6),
-    0 18px 40px rgba(0,0,0,0.65);
-  transform-style: preserve-3d;
-  transition: transform 360ms cubic-bezier(.2,.9,.2,1), text-shadow 220ms ease;
-  display: inline-block;
-  padding: 6px 12px;
-  background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(0,0,0,0.06));
-  border-radius: 6px;
-}
-
-/* Apply stylish heading font to section and card titles */
-h1, h2, h3, .card-title, .section-title{ 
-  font-family: var(--font-heading);
-  letter-spacing: 0.6px;
-}
-
-/* Slightly bolder secondary headings */
-.about h2, .events .section-title{ font-weight:700; font-size:1.6rem; }
-
-/* Make filter tabs and key UI use the Unbounded font for modern rounded look */
-.filter-tabs, .filter-btn, .quick-btn, .chat-meta strong{ font-family: 'Unbounded', var(--font-sans); }
-
-/* subtle shine overlay */
-.header-text h1::after{
-  content: '';
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background: linear-gradient(120deg, rgba(255,255,255,0.06), rgba(255,255,255,0.00));
-  mix-blend-mode: screen;
-  border-radius: 6px;
-  transform: translateZ(20px) scale(1.02);
-}
-
 @keyframes gradientMove{
   0%{background-position:0%}
   50%{background-position:100%}
   100%{background-position:0%}
 }
 
-.header-text .dept{
-  color: var(--yellow);
-  font-size: 1.1rem;
-  margin-top: 0.2rem;
-}
 
 /* BUTTON */
 .cta, .ButtonR{
@@ -221,38 +166,9 @@ h1, h2, h3, .card-title, .section-title{
   transition: transform 620ms cubic-bezier(.2,.9,.2,1), opacity 480ms ease;
 }
 
-.header-text h1{
-  font-family: 'Bungee Shade', var(--font-heading);
-  font-size: 3.4rem;
-  line-height: 1;
-  letter-spacing: 3px;
-  /* red -> yellow neon gradient clipped to text */
-  background: linear-gradient(90deg, rgba(255,30,30,1), rgba(255,218,24,1));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  display: inline-block;
-  position: relative;
-  padding: 6px 12px;
-  border-radius: 6px;
-  transform-style: preserve-3d;
-  transition: transform 360ms cubic-bezier(.2,.9,.2,1), text-shadow 180ms ease, filter 180ms ease;
-  /* default neon shadow: small yellow rim + larger red glow */
-  text-shadow:
-    0 0 6px rgba(255,218,24,0.95),
-    0 0 18px rgba(255,0,0,0.85),
-    0 12px 32px rgba(255,0,0,0.25);
-  filter: drop-shadow(0 6px 18px rgba(255,0,0,0.18));
-}
 
-/* intensified glow on hover/focus (desktop) */
-.header-text h1:hover, .header-text h1:focus{
-  text-shadow:
-    0 0 10px rgba(255,238,120,1),
-    0 0 30px rgba(255,40,40,0.95),
-    0 18px 48px rgba(255,0,0,0.32);
-  filter: drop-shadow(0 10px 30px rgba(255,0,0,0.25));
-}
+
+
 
 
 /* visible state: slide into place and fade in */
@@ -850,13 +766,6 @@ a:focus, button:focus, .dot:focus{
 .tech-page-body .HomeLogo .header-image:hover{ transform: scale(1.06); box-shadow: 0 14px 34px rgba(0,0,0,0.72); }
 .tech-page-body .site-header .cta{ padding:0.45rem 0.9rem; border-radius:20px }
 
-/* Respect reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  .header-text h1{
-    transition: none !important;
-    animation: none !important;
-  }
-}
 
 /* TechPage specific styles */
 .tech-page .page-hero{ padding: 2rem 0; text-align:center; }
@@ -1730,6 +1639,7 @@ a:focus, button:focus, .dot:focus{
   padding-top: 1rem;
 }
 
+
 .header-text::before {
   content: "";
   position: absolute;
@@ -1750,7 +1660,20 @@ a:focus, button:focus, .dot:focus{
 
 .header-title-img {
   position: relative;
-  z-index: 1;
+  z-index: 5;
+  transform: translateX(-40px);
+  padding-right: 140px;
+
+  width: 320px;   /* 🔥 increase this value */
+  height: auto;   /* keep aspect ratio */
+}
+
+
+
+@media (max-width: 768px) {
+  .header-title-img {
+    transform: translateX(0.5rem) scale(1.05);
+  }
 }
 .event-strip {
   width: 100%;
@@ -1776,5 +1699,297 @@ a:focus, button:focus, .dot:focus{
   margin: 0 0.8rem;
   opacity: 0.6;
 }
+/* ===============================
+   MOBILE HEADER FIX
+   =============================== */
+@media (max-width: 768px) {
+
+  .site-header {
+  min-height: 100vh;   /* ✅ allows growth */
+  height: auto;        /* ✅ important */
+  overflow: visible;
+}
+
+
+  /* MXCEL logo (image) */
+  .header-title-img {
+    height: 110px;        /* reduced for mobile */
+    max-width: 95%;
+    margin-bottom: 0.4rem;
+  }
+
+  /* Remove heavy glow on mobile (performance + clarity) */
+  .header-title-img {
+    filter:
+      drop-shadow(0 0 12px rgba(255, 170, 60, 0.7))
+      drop-shadow(0 0 28px rgba(255, 140, 40, 0.5));
+  }
+
+  /* Department text */
+  .dept {
+    font-size: 0.95rem;
+    text-align: center;
+    line-height: 1.3;
+  }
+
+  /* Header actions (buttons) */
+ .header-actions {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  align-items: flex-end;     /* ⬅ LEFT align */
+  padding-right: 0.8rem;        /* small left spacing */
+}
+
+.header-actions .cta {
+  width: auto;                 /* no forced full width */
+  min-width: 120px;            /* consistent button size */
+  text-align: center;
+  padding: 0.45rem 0.9rem;
+  font-size: 0.8rem;
+  border-radius: 999px;
+}
+}
+@media (max-width: 768px) {
+
+  .site-header {
+    min-height: unset;   /* reset desktop rule */
+    height: auto;
+    padding: 1rem 0.8rem;
+  }
+
+  /* Make sure logos fit */
+  .header-title-img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+/* ======================================================
+   GLOBAL MOBILE RESPONSIVE OVERRIDES (SAFE LAYER)
+   ====================================================== */
+
+/* ---------- HEADER ---------- */
+
+@media (max-width: 900px) {
+  :root {
+    --header-h: 110px;
+  }
+
+  body {
+    padding-top: calc(var(--header-h) + 0.5rem);
+  }
+
+  .site-header {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6rem;
+    padding: 0.4rem 0.8rem;
+    height: var(--header-h);
+  }
+
+  .logo-img {
+    width: 80px;
+    height: 80px;
+    border-width: 6px;
+  }
+
+  .header-actions {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 0.6rem;
+  }
+
+  .cta {
+    padding: 0.45rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* ---------- MXCEL 2K26 LOGO IMAGE (FIXED) ---------- */
+
+.site-header .header-title-img {
+  height: 80px;
+  width: auto;
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;
+  z-index: 2;
+  position: relative;
+
+  filter:
+    drop-shadow(0 0 8px rgba(255,0,0,0.8))
+    drop-shadow(0 0 16px rgba(255,200,0,0.6));
+}
+
+@media (max-width: 700px) {
+  .site-header .header-title-img {
+    height: 55px;
+  }
+}
+
+/* ---------- SLIDER ---------- */
+
+@media (max-width: 768px) {
+  .slide {
+    height: 240px;
+  }
+
+  .slide-caption {
+    max-width: 90%;
+    left: 14px;
+    bottom: 14px;
+  }
+
+  .slide-caption h3 {
+    font-size: 1.05rem;
+  }
+
+  .slide-caption p {
+    font-size: 0.85rem;
+  }
+}
+
+/* ---------- ABOUT SECTION ---------- */
+
+@media (max-width: 768px) {
+  .about {
+    margin: 2rem 1rem;
+    padding: 1.8rem 1.2rem;
+  }
+
+  .about-logo {
+    width: 130px;
+  }
+
+  .about-block h2 {
+    font-size: 1.7rem;
+  }
+
+  .about-block p {
+    font-size: 0.98rem;
+    text-align: left;
+  }
+}
+
+/* ---------- EVENT CARDS ---------- */
+
+@media (max-width: 900px) {
+  .events {
+    padding: 0 1rem;
+  }
+
+  .events-grid,
+  .events-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    min-height: auto;
+  }
+}
+
+/* ---------- PILLARS SECTION ---------- */
+
+@media (max-width: 900px) {
+  .pillars-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pillar-card img {
+    height: auto;
+  }
+}
+
+/* ---------- FOOTER ---------- */
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-brand {
+    flex-direction: column;
+  }
+
+  .footer-brand p {
+    font-size: 1rem;
+  }
+}
+
+/* ---------- CHATBOT ---------- */
+
+@media (max-width: 520px) {
+  .chat-panel {
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+    width: auto;
+    max-height: 80vh;
+  }
+
+  .chat-body {
+    max-height: 45vh;
+  }
+}
+
+/* ---------- PERFORMANCE ---------- */
+
+@media (max-width: 900px) {
+  #bgPhotos,
+  #floatingTools,
+  #bgLogo {
+    display: none !important;
+  }
+}
+/* ================================
+   HEADER ACTIONS → TOP RIGHT
+   ================================ */
+
+.site-header{
+  position: fixed;
+}
+
+/* Desktop & tablet */
+.header-actions{
+  position: absolute;
+  top: 50%;
+  right: 18px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Button sizing */
+.header-actions .cta{
+  padding: 0.55rem 1.4rem;
+  font-size: 0.95rem;
+  border-radius: 999px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* ================================
+   MOBILE FIX
+   ================================ */
+
+@media (max-width: 700px){
+  .header-actions{
+    top: 10px;
+    right: 10px;
+    transform: none;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .header-actions .cta{
+    padding: 0.4rem 1rem;
+    font-size: 0.8rem;
+  }
+}
+
 
 
