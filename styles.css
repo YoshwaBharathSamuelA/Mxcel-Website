@@ -165,12 +165,20 @@ body{
   opacity: 0;
   transition: transform 620ms cubic-bezier(.2,.9,.2,1), opacity 480ms ease;
 }
+/* Align EVENTS width exactly like ABOUT */
+.events {
+  max-width: 700px;      /* SAME as .about */
+  margin: 2rem auto;
+  padding: 0;            /* remove side padding difference */
+}
+.events .container {
+  max-width: 100%;
+  padding: 0;
+}
 
-
-
-
-
-
+.events .card {
+  width: 100%;
+}
 /* visible state: slide into place and fade in */
 .about.visible,
 .events.visible,
@@ -363,21 +371,78 @@ a:focus, button:focus, .dot:focus{
 .card{
   display:flex;
   flex-direction:column;
-  justify-content:space-between;
-  min-height: 260px;
-  /* darker translucent panel so text reads over the background logo */
+  height: auto;
+  min-height: unset;
   background: rgba(0,0,0,0.64);
+  padding: 1rem 1.25rem;
   border: 1px solid rgba(255,255,255,0.06);
   box-shadow: 0 18px 48px rgba(0,0,0,0.58);
-  padding: 1rem 1.25rem;
   backdrop-filter: blur(6px) saturate(1.05);
 }
-.card-inner{ display:flex; flex-direction:column; justify-content:space-between; height:100%; align-items:center; text-align:center; }
+
+
+
+@media (max-width: 520px) {
+  .register-btn {
+    width: 100%;
+    margin-top: 22px;
+  }
+
+  .detail-block:last-child {
+    margin-bottom: 5px;
+  }
+}
+
+
+
+
+.detail-block {
+  background: rgba(0,0,0,0.35);
+  border-left: 4px solid #ffd800;
+  padding: 10px 12px;
+  border-radius: 10px;
+}
+
+
+.detail-block h4 {
+  margin: 0 0 4px;
+  font-size: 0.95rem;
+  font-weight: 900;
+  letter-spacing: 0.6px;
+  color: #ffd800;
+}
+
+.detail-block p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #f1f1f1;
+}
+.card-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;           /* 🔥 uniform vertical rhythm */
+  padding: 24px 22px;  /* 🔥 equal inner spacing */
+}
+
+
 .card-title{ font-size:1.25rem; color:var(--red-strong); margin-bottom:0.35rem; text-align:center; text-shadow: 0 2px 8px rgba(0,0,0,0.6); }
 .card-desc{ color:#fff; opacity:1; margin-bottom:0.6rem; text-align:center; text-shadow: 0 6px 18px rgba(0,0,0,0.6); }
-.card-list{ list-style: none; padding-left:0; margin:0 0 0.5rem 0; color:var(--yellow); display:inline-block; text-align:left; font-weight:600; }
-.card-list li{ margin:8px 0; opacity:0.98; text-shadow: 0 2px 8px rgba(0,0,0,0.45); }
-.card-actions{ display:flex; justify-content:center; width:100%; }
+.card-list
+{ list-style: none; 
+  padding-left:0;
+   margin:8px 0 4px; 
+   color:var(--yellow); 
+   display:inline-block; text-align:left; font-weight:600; 
+  }
+.card-list li{ margin:8px 0;
+  opacity:0.98; 
+  text-shadow: 0 2px 8px rgba(0,0,0,0.45); 
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  margin-bottom: 8px;
+}
+
 .register-btn{
   display:inline-flex; align-items:center; gap:8px;
   background: linear-gradient(180deg, #ff3b3b, #ff6b6b);
@@ -386,6 +451,63 @@ a:focus, button:focus, .dot:focus{
   transition: transform 200ms cubic-bezier(.2,.9,.2,1), box-shadow 200ms ease;
   border: 1px solid rgba(255,255,255,0.06);
 }
+/* COMMON ACTION BUTTON STYLE */
+.action-btn,
+.register-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0.65rem 1.15rem;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 0.95rem;
+  letter-spacing: 0.4px;
+  cursor: pointer;
+  transition: transform 200ms cubic-bezier(.2,.9,.2,1), box-shadow 200ms ease;
+  margin-top:6px,
+}
+
+/* REGISTER (Primary) */
+.register-btn {
+  background: linear-gradient(180deg, #ff3b3b, #ff6b6b);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.06);
+  box-shadow:
+    0 10px 28px rgba(255,0,0,0.25),
+    0 2px 6px rgba(0,0,0,0.45) inset;
+}
+
+/* VIEW DETAILS (Secondary – same style, outlined) */
+/* ================= VIEW DETAILS – BLUE PREMIUM STYLE ================= */
+/* ================= FORCE VIEW DETAILS FULL BLUE ================= */
+.details-btn {
+  background: linear-gradient(180deg, #1e90ff, #0b5ed7) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(100,180,255,0.9) !important;
+  box-shadow:
+    0 10px 28px rgba(30,144,255,0.45),
+    inset 0 2px 6px rgba(255,255,255,0.25);
+  margin-bottom: 4px;
+}
+
+/* Hover */
+.details-btn:hover {
+  background: linear-gradient(180deg, #4da3ff, #1e90ff) !important;
+  transform: translateY(-6px) scale(1.03);
+  box-shadow:
+    0 20px 48px rgba(30,144,255,0.65),
+    inset 0 3px 8px rgba(255,255,255,0.3);
+}
+
+/* Active */
+.details-btn:active {
+  transform: translateY(-2px) scale(0.98);
+}
+
+
+
+
 .register-btn:hover, .register-btn:focus{ transform: translateY(-6px) scale(1.02); box-shadow: 0 20px 44px rgba(255,0,0,0.32), 0 4px 10px rgba(0,0,0,0.5) inset; color: #fffccf }
 
 /* Add a colored top accent line to differentiate cards */
@@ -2026,3 +2148,338 @@ a:focus, button:focus, .dot:focus{
     animation: none !important;
   }
 }
+.event-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  z-index: 9999;
+  backdrop-filter: blur(6px);
+}
+
+.modal-content {
+  background: #111;
+  color: #fff;
+  max-width: 600px;
+  margin: 6% auto;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 0 25px rgba(255,60,60,0.3);
+}
+
+.close-btn {
+  float: right;
+  font-size: 28px;
+  cursor: pointer;
+  color: #ff3b3b;
+}
+
+.details-btn {
+  background: transparent;
+  border: 1px solid #ff3b3b;
+  color: #ff3b3b;
+  padding: 8px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.details-btn:hover {
+  background: #ff3b3b;
+  color: #000;
+}
+
+
+.card.expanded .event-details {
+  display: block;
+  flex-direction: column;
+  gap: 14px;
+  padding-bottom: 2px; /* 🔴 MORE SPACE for Register */
+}
+
+
+
+.details-btn {
+  background: transparent;
+  border: 1px solid #ff3b3b;
+  color: #ff3b3b;
+  padding: 8px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.details-btn:hover {
+  background: #ff3b3b;
+  color: #000;
+}
+/* EVENT DETAILS DROPDOWN */
+
+
+/* ================= MOBILE VIEW FIX ================= */
+
+
+  /* Make buttons full width */
+  .details-btn,
+  .register-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 0.8rem 1rem;
+    font-size: 0.95rem;
+  }
+
+  /* Reduce excessive height */
+  .details-btn {
+    min-height: 44px;
+  }
+
+  /* Dropdown text spacing */
+ 
+
+  /* Better separation from buttons */
+  
+
+  /* Prevent button overlap */
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* ===== SYNC VIEW DETAILS SIZE & CURVE WITH REGISTER ===== */
+
+/* ===== MATCH VIEW DETAILS FONT WITH REGISTER ===== */
+.details-btn {
+  font-family: inherit;          /* same font as Register */
+  font-weight: 800;              /* same boldness */
+  font-size: 0.95rem;            /* same size */
+  letter-spacing: 0.4px;         /* same spacing */
+  text-transform: none;          /* keep same casing */
+  line-height: 1;                /* same vertical alignment */
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  margin-bottom: 4px;
+}
+/* Prevent bottom fixed buttons from hiding dropdown content */
+
+
+/* ===== FIX: Bottom fixed UI hiding dropdown content ===== */
+/* ===== MOBILE FIX: Allow full dropdown scroll ===== */
+/* ===== MOBILE: Remove unnecessary gap ===== */
+
+
+/* ===== FINAL MOBILE FIX: bottom bar overlap ===== */
+@media (max-width: 600px) {
+
+  /* When a card is expanded, add safe space */
+  .card.expanded {
+    padding-bottom: calc(90px + env(safe-area-inset-bottom));
+  }
+
+}
+
+
+/* ===== CLEAN EVENT LIST DESIGN ===== */
+
+
+
+.detail-item {
+  background: rgba(0,0,0,0.35);
+  border-left: 4px solid #ffd800;
+  padding: 14px 16px;
+  border-radius: 12px;
+
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  color: #ffd800;
+
+  text-transform: uppercase;
+}
+/* ===== EVENT DETAILS WITH DESCRIPTION ===== */
+
+
+.detail-item {
+  background: rgba(0,0,0,0.35);
+  border-left: 4px solid #ffd800;
+  padding: 14px 16px;
+  border-radius: 14px;
+}
+
+.detail-item h4 {
+  margin: 0 0 6px;
+  font-size: 0.95rem;
+  font-weight: 900;
+  letter-spacing: 0.6px;
+  color: #ffd800;
+  text-transform: uppercase;
+}
+
+.detail-item p {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: #f1f1f1;
+  opacity: 0.9;
+}
+/* Ensure Register does not overlap details */
+
+/* ===== FINAL FIX: NEVER CLIP EVENT DETAILS ===== */
+.card,
+.card-inner,
+.event-details {
+  overflow: visible !important;
+}
+.event-details {
+  display: none;
+  width: 100%;
+}
+
+
+/* ===== FIX: Register button overlapping details ===== */
+
+
+.card {
+  overflow: visible;   /* 🔥 CRITICAL */
+}
+/* ===== FIX: EVENT DETAILS VISIBILITY (MOBILE SAFE) ===== */
+
+
+/* Ensure details take full height */
+.card.expanded {
+  height: auto !important;
+}
+
+/* Prevent overlap with Register button */
+.card-inner {
+  padding-bottom: 1.5rem;
+}
+
+.detail-block {
+  position: relative;
+  z-index: 1;
+}
+/* ===== FINAL REGISTER OVERLAP FIX ===== */
+
+
+.register-btn {
+  position: relative;
+  margin-top: 18px;
+  align-self: center;
+}
+
+
+.card-actions {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top:8px;
+  position: relative;  
+  z-index: 2;
+}
+/* 🔥 MOBILE FIX — PREVENT REGISTER OVERLAP */
+@media (max-width: 520px) {
+  .detail-block {
+    margin-bottom: 18px;
+  }
+
+  .register-btn {
+    margin-top: 28px;
+    position: relative;
+    z-index: 1;
+  }
+}
+/* 🔥 MOBILE FIX — PREVENT REGISTER OVERLAP */
+@media (max-width: 520px) {
+  .detail-block {
+    margin-bottom: 18px;
+  }
+
+  .register-btn {
+    margin-top: 28px;
+    position: relative;
+    z-index: 1;
+  }
+}
+.card-actions {
+  margin-top: 28px;
+}
+@media (max-width: 520px) {
+  .detail-block:last-child {
+    margin-bottom: 5px;
+  }
+}
+@media (max-width: 520px) {
+  .card-actions {
+    margin-top: 12px;
+  }
+}
+/* ===== FINAL, CLEAN EVENT DETAILS VISIBILITY ===== */
+
+.event-details {
+  display: none;
+  width: 100%;
+}
+
+.card.expanded .event-details {
+  display: block;
+}
+
+/* ===== SLIDER CAPTION VISIBILITY FIX ===== */
+.slide-caption {
+  position: absolute;
+  left: 6%;
+  bottom: 18%;
+  z-index: 5;
+
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(6px);
+  padding: 14px 22px;
+  border-radius: 14px;
+
+  box-shadow: 0 0 18px rgba(0, 0, 0, 0.6);
+}
+
+.slide-caption h3 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #ffd966; /* GOLD */
+  text-shadow:
+    0 0 6px rgba(255, 217, 102, 0.7),
+    0 0 12px rgba(255, 170, 0, 0.6);
+}
+
+.slide-caption p {
+  margin: 6px 0 0;
+  font-size: 1rem;
+  color: #fff3c4;
+  text-shadow: 0 0 6px rgba(0, 0, 0, 0.8);
+}
+.general-info {
+  margin-top: 24px;
+  background: rgba(0,0,0,0.35);
+  border-left: 4px solid #00eaff;
+  padding: 14px 16px;
+  border-radius: 14px;
+}
+
+.general-info h4 {
+  margin: 0 0 10px;
+  color: #00eaff;
+  font-size: 0.95rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.general-info ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.general-info li {
+  color: #f1f1f1;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin-bottom: 6px;
+}
+
+

@@ -506,38 +506,27 @@ function initTechPageInteractions(){
   }
 
   // details toggle
-  document.addEventListener('click', (e)=>{
-    const btn = e.target.closest('.more-btn');
-    if(!btn) return;
-    const card = btn.closest('.event-card');
-    const expanded = card.classList.toggle('expanded');
-    btn.setAttribute('aria-expanded', String(expanded));
-    card.classList.toggle('reveal', true); // ensure visible when expanded
+  // DETAILS DROPDOWN TOGGLE (FIXED)
+/* ===== DETAILS TOGGLE (FINAL, SAFE) ===== */
+/* ===== DETAILS TOGGLE (FINAL, SAFE) ===== */
+document.querySelectorAll('.details-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const card = btn.closest('.card');
+    if (!card) return;
+
+    card.classList.toggle('expanded');
+
+    btn.textContent = card.classList.contains('expanded')
+      ? 'Hide Details'
+      : 'View Details';
   });
+});
 
 
 
-  // modal close and submit
-  modal.addEventListener('click', (e)=>{
-    if(e.target === modal || e.target.classList.contains('close-btn')){
-      modal.classList.remove('active');
-    }
-  });
-  window.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') modal.classList.remove('active'); });
 
-  // fake submission (placeholder) — in real app, post to server
-  const submit = modal.querySelector('#submitReg');
-  submit.addEventListener('click', ()=>{
-    const form = modal.querySelector('#registerForm');
-    const formData = new FormData(form);
-    // Minimal validation already via required attributes
-    // Show a quick thank-you state
-    submit.textContent = 'Sending…';
-    setTimeout(()=>{
-      submit.textContent = 'Submitted ✓';
-      setTimeout(()=>{ modal.classList.remove('active'); submit.textContent = 'Submit'; form.reset(); }, 900);
-    }, 900);
-  });
+
+
 
   // IntersectionObserver reveal
   const io = new IntersectionObserver((entries)=>{
@@ -602,7 +591,7 @@ function initChatbot(){
   function botReplyFor(text){
     const t = String(text||'').toLowerCase();
     if(/event|events|club|workshop|competition/.test(t)) return 'We have technical workshops, paper presentations and cultural events — which category interests you?';
-    if(/contact|phone|email|address/.test(t)) return 'Reach us at admin@kongu.edu or call +91-XXXXXXXXXX. You can also visit the Contact section on the website.';
+    if(/contact|phone|email|address/.test(t)) return 'Reach us at kec.mea@gmail.com or call +91-86673 52688. You can also visit the Contact section on the website.';
   if(/about|who|what/.test(t)) return 'MXCEL-2K26 is a national symposium organised by the Mechanical Engineering dept. We host technical and non-technical events across two days.';
     if(/website|site|link/.test(t)) return 'All event details and registration links are available on the site. Use the Register buttons on the Events page.';
     if(/hello|hi|hey/.test(t)) return 'Hello! I am the event assistant — ask me about events, registration, or schedules.';
@@ -1203,11 +1192,37 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-emailjs.sendForm(
-  "service_5gpihxi",
-  "template_5i4w8tq",
-  this,
-  "PSFWFFT4yddMk0wzk"   // SAME public key here
-);
 
 
+
+/* ================= EVENT DETAILS MODAL ================= */
+
+/* ================= EVENT DETAILS MODAL (FINAL FIX) ================= */
+
+document.addEventListener('click', (e) => {
+  const btn = e.target.closest('.details-btn');
+  if (!btn) return;
+
+  const card = btn.closest('.event-card');
+  if (!card) return;
+
+  const expanded = card.classList.toggle('expanded');
+  btn.textContent = expanded ? 'Hide Details' : 'View Details';
+});
+document.addEventListener('click', (e) => {
+  const btn = e.target.closest('.details-btn');
+  if (!btn) return;
+
+  const card = btn.closest('.card');
+  if (!card) return;
+
+  // After expand, ensure full content is reachable on mobile
+  if (card.classList.contains('expanded')) {
+    setTimeout(() => {
+      card.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }, 150);
+  }
+});
