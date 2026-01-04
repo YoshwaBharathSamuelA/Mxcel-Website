@@ -439,12 +439,17 @@ function initBgPhotos(){
   };
 }
 
-document.addEventListener('DOMContentLoaded', ()=> initBgPhotos());
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.card').forEach(card => {
+    card.classList.remove('expanded');
+  });
+});
+
 
 /* TechPage interactions: filters, modal register, details toggle, reveal on scroll */
 function initTechPageInteractions(){
   const filterBtns = document.querySelectorAll('.filter-btn');
-  const cards = Array.from(document.querySelectorAll('.event-card'));
+  const cards = Array.from(document.querySelectorAll('.card'));
 
   // filter behavior
   filterBtns.forEach(btn => btn.addEventListener('click', ()=>{
@@ -509,6 +514,7 @@ function initTechPageInteractions(){
   // DETAILS DROPDOWN TOGGLE (FIXED)
 /* ===== DETAILS TOGGLE (FINAL, SAFE) ===== */
 /* ===== DETAILS TOGGLE (FINAL, SAFE) ===== */
+// ===== DETAILS TOGGLE (FINAL & CLEAN) =====
 document.querySelectorAll('.details-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     const card = btn.closest('.card');
@@ -519,12 +525,15 @@ document.querySelectorAll('.details-btn').forEach(btn => {
     btn.textContent = card.classList.contains('expanded')
       ? 'Hide Details'
       : 'View Details';
+
+    // Optional smooth scroll on expand (mobile-friendly)
+    if (card.classList.contains('expanded')) {
+      setTimeout(() => {
+        card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 120);
+    }
   });
 });
-
-
-
-
 
 
 
@@ -1199,30 +1208,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
 /* ================= EVENT DETAILS MODAL (FINAL FIX) ================= */
 
-document.addEventListener('click', (e) => {
-  const btn = e.target.closest('.details-btn');
-  if (!btn) return;
 
-  const card = btn.closest('.event-card');
-  if (!card) return;
 
-  const expanded = card.classList.toggle('expanded');
-  btn.textContent = expanded ? 'Hide Details' : 'View Details';
-});
-document.addEventListener('click', (e) => {
-  const btn = e.target.closest('.details-btn');
-  if (!btn) return;
-
-  const card = btn.closest('.card');
-  if (!card) return;
-
-  // After expand, ensure full content is reachable on mobile
-  if (card.classList.contains('expanded')) {
-    setTimeout(() => {
-      card.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
-    }, 150);
-  }
-});
