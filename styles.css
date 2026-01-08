@@ -1831,9 +1831,8 @@ a:focus, button:focus, .dot:focus{
 .header-title-img {
   position: relative;
   z-index: 5;
-  transform: translateX(-40px);
+  transform: translateX(130px);
   padding-right: 140px;
-
   width: 320px;   /* 🔥 increase this value */
   height: auto;   /* keep aspect ratio */
 }
@@ -2533,7 +2532,7 @@ a:focus, button:focus, .dot:focus{
 }
 }
 .header-title-img{
-  height: 80px;
+  height: 100px;
   width: auto;
   max-width: 100%;
   object-fit: contain;
