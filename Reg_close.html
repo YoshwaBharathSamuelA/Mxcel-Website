@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MXCEL – Registrations Closed</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="Pictures/logo.png">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle at top, #8b0000, #2b0000);
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* HEADER */
+    .site-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background: rgba(0,0,0,0.45);
+      backdrop-filter: blur(6px);
+    }
+
+    .logo-img {
+      height: 55px;
+    }
+
+    .header-title-img {
+      height: 60px;
+    }
+
+    .header-actions .cta {
+      text-decoration: none;
+      margin-left: 12px;
+      padding: 8px 18px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #ffd700, #ffae00);
+      color: #400000;
+      font-weight: 600;
+    }
+
+    /* CLOSED SECTION */
+    .closed-wrapper {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 80px 20px;
+    }
+
+    .closed-box {
+      text-align: center;
+      padding: 80px 60px;
+      border-radius: 28px;
+      background: linear-gradient(145deg, #9c0000, #420000);
+      border: 4px solid #ffd700;
+      box-shadow:
+        0 0 30px rgba(255,215,0,0.7),
+        0 0 80px rgba(255,0,0,0.6);
+    }
+
+    .closed-title {
+      font-family: 'Cinzel', serif;
+      font-size: 38px;
+      font-weight: 800;
+      color: #ffd700;
+      letter-spacing: 3px;
+      margin-bottom: 22px;
+      text-shadow: 0 0 20px rgba(255,215,0,0.8);
+    }
+
+    .closed-sub {
+      font-size: 22px;
+      letter-spacing: 5px;
+      color: #ffe9b3;
+      margin-bottom: 10px;
+    }
+
+    .closed-year {
+      font-size: 32px;
+      font-weight: 700;
+      color: #fff2a8;
+      text-shadow: 0 0 18px rgba(255,215,0,0.85);
+    }
+
+    /* FOOTER */
+    .site-footer {
+      background: #120000;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    .footer-logo {
+      height: 55px;
+      margin-bottom: 10px;
+    }
+
+    .footer-social a {
+      color: #ffd700;
+      font-size: 18px;
+      margin: 0 8px;
+    }
+
+    .footer-bottom {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #ccc;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 600px) {
+      .header-title-img { height: 45px; }
+      .closed-box { padding: 50px 30px; }
+      .closed-title { font-size: 24px; }
+      .closed-year { font-size: 22px; }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <a href="index.html">
+    <img src="Pictures/logo.png" alt="MXCEL Logo" class="logo-img">
+  </a>
+
+  <img src="Pictures/Logo_Bgw.png" alt="MXCEL 2K26" class="header-title-img">
+
+  <div class="header-actions">
+    <a class="cta" href="contact.html">Contact</a>
+  </div>
+</header>
+
+<!-- CLOSED MESSAGE -->
+<div class="closed-wrapper">
+  <div class="closed-box">
+    <div class="closed-title">REGISTRATIONS HAVE BEEN CLOSED</div>
+    <div class="closed-sub">SEE YOU AT</div>
+    <div class="closed-year">MXCEL 2027</div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <img src="Pictures/logo.png" alt="MXCEL Logo" class="footer-logo">
+
+  <p>Mechanical Engineering Association<br>Kongu Engineering College</p>
+
+  <div class="footer-social">
+    <a href="https://www.instagram.com/kec_mea/" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://linkedin.com/in/mechanical-engineering-association-177a92253" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+    <a href="mailto:kec.mea@gmail.com"><i class="fas fa-envelope"></i></a>
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 MXCEL | Designed & Maintained by Bharath
+  </div>
+</footer>
+
+</body>
+</html>

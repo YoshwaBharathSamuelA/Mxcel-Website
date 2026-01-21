@@ -2881,7 +2881,136 @@ a:focus, button:focus, .dot:focus{
     transform: translateY(0) scale(1);
   }
 }
+/* ==============================
+   REGISTRATION CLOSED SECTION
+============================== */
 
+
+
+
+
+/* Disabled CTA */
+.cta.disabled {
+    pointer-events: none;
+    opacity: 0.6;
+    background: linear-gradient(135deg, #555, #333);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .closed { font-size: 26px; }
+    .mxcel { font-size: 22px; }
+}
+/* ===============================
+   REGISTRATION CLOSED – ISOLATED
+=============================== */
+
+
+
+/* isolated box */
+
+
+
+
+
+/* title */
+
+
+
+/* year */
+
+
+/* mobile polish */
+@media (max-width: 600px) {
+  .closed-box {
+    padding: 50px 30px;
+  }
+
+  
+
+  .closed-year {
+    font-size: 22px;
+  }
+}
+
+/* ===============================
+   REGISTRATION CLOSED – FINAL
+=============================== */
+
+.closed-section {
+  min-height: 75vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 20px;
+
+  background: radial-gradient(
+    circle at top,
+    #9a0000 0%,
+    #3b0000 55%,
+    #120000 100%
+  );
+}
+
+.closed-box {
+  text-align: center;
+  padding: 80px 60px;
+  border-radius: 30px;
+  border: 4px solid #ffd700;
+
+  background: linear-gradient(145deg, #9c0000, #4a0000);
+
+  box-shadow:
+    0 0 35px rgba(255, 215, 0, 0.75),
+    0 0 90px rgba(255, 0, 0, 0.7),
+    inset 0 0 40px rgba(255, 255, 255, 0.08);
+}
+
+.closed-title {
+  font-family: 'Cinzel', serif;
+  font-size: 42px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  color: #ffd700;
+
+  text-shadow:
+    0 0 18px rgba(255,215,0,0.9),
+    0 0 40px rgba(255,180,80,0.8);
+
+  margin-bottom: 26px;
+}
+
+.closed-sub {
+  font-size: 22px;
+  letter-spacing: 6px;
+  color: #ffe9b3;
+  margin-bottom: 10px;
+}
+
+.closed-year {
+  font-size: 34px;
+  font-weight: 900;
+  color: #fff2a8;
+
+  text-shadow:
+    0 0 20px rgba(255, 215, 0, 0.85);
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .closed-box {
+    padding: 50px 30px;
+  }
+
+  .closed-title {
+    font-size: 26px;
+    letter-spacing: 1.5px;
+  }
+
+  .closed-year {
+    font-size: 22px;
+  }
+}
 
 
 }
